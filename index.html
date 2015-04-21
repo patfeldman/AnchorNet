@@ -13,14 +13,14 @@
         <div class="container">
             <div class="col-sm-8 col-sm-offset-2">
                 <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
-                <div ng-view></div>
+                <div ui-view></div>
             </div>
         </div>
     </div>
 
     <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-    <script src="http://code.angularjs.org/1.2.20/angular.js"></script>
-    <script src="http://code.angularjs.org/1.2.20/angular-route.js"></script>
+    <script src="http://code.angularjs.org/1.2.20/angular.min.js"></script>
+    <script src="assets/js/angular-ui-router.min.js"></script>
     <script src="http://code.angularjs.org/1.2.13/angular-cookies.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-animate.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-touch.min.js"></script>
@@ -40,5 +40,6 @@
     <script src="app/components/login/login.controller.js"></script>
     <script src="app/components/register/register.controller.js"></script>
     <script src="app/components/tutorial/tutorial.controller.js"></script>
+    <script src="app/components/menu_top/menu_top.controller.js"></script>
 </body>
 </html>

@@ -5,8 +5,8 @@
         .module('app')
         .controller('RegisterController', RegisterController);
 
-    RegisterController.$inject = ['UserService', '$location', '$rootScope', 'FlashService','AuthenticationService'];
-    function RegisterController(UserService, $location, $rootScope, FlashService, AuthenticationService) {
+    RegisterController.$inject = ['UserService', '$location', '$rootScope', 'FlashService','AuthenticationService', '$state'];
+    function RegisterController(UserService, $location, $rootScope, FlashService, AuthenticationService, $state) {
         var vm = this;
 
         vm.register = register;
@@ -20,7 +20,7 @@
                         AuthenticationService.Login(vm.user.username, vm.user.password, function (response) {
                             if (response.success) {
                                 AuthenticationService.SetCredentials(vm.user.username, vm.user.password);
-                                $location.path('/walkthrough');
+                                $state.go('tutorial');
                             }
                         });
                     } else {

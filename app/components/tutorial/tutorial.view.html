@@ -1,4 +1,6 @@
-﻿<div class="container slider">
+﻿<div ui-view="topMenu"></div>
+
+<div class="container slider">
     <img ng-repeat="slide in vm.slides" class="slide slide-animation"
         ng-hide="!vm.isCurrentSlideIndex($index)" ng-src="{{slide.image}}">
 
