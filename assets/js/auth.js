@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app', ['ngRoute', 'ngCookies'])
+        .module('app', ['ngRoute', 'ngCookies', 'ngAnimate', 'ngTouch'])
         .config(config)
         .run(run);
 
@@ -24,6 +24,12 @@
             .when('/register', {
                 controller: 'RegisterController',
                 templateUrl: 'app/components/register/register.view.html',
+                controllerAs: 'vm'
+            })
+
+            .when('/walkthrough', {
+                controller: 'TutorialController',
+                templateUrl: 'app/components/tutorial/tutorial.view.html',
                 controllerAs: 'vm'
             })
 
