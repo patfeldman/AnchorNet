@@ -10,6 +10,15 @@
     function config($stateProvider, $urlRouterProvider){
 
         $stateProvider
+            .state('main', {
+                url:'/main',
+                views: {
+                    '': {
+                        templateUrl: 'app/components/main/main.view.html'
+                    }
+                }
+            })
+
             .state('home', {
                 url:'/home',
                 views: {
@@ -65,7 +74,7 @@
                 }
 
             })
-        $urlRouterProvider.otherwise('/home');
+        $urlRouterProvider.otherwise('/main');
     }
 
     run.$inject = ['$rootScope', '$location', '$cookieStore', '$http', '$state'];
@@ -78,7 +87,7 @@
 
         $rootScope.$on('$locationChangeStart', function (event, next, current) {
             // redirect to login page if not logged in and trying to access a restricted page
-            var restrictedPage = $.inArray($state.current.name, ['login', 'register']) === -1;
+            var restrictedPage = $.inArray($state.current.name, ['login', 'register', 'main']) === -1;
             var loggedIn = $rootScope.globals.currentUser;
             if (restrictedPage && !loggedIn) {
                 $state.go('login');

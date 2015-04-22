@@ -123,3 +123,50 @@ NAV
     border-color: #000;
     background-color: transparent;
 }
+
+.logo {
+    margin: 0 auto;
+    padding-bottom:10px;
+}
+
+#UpperSplash{
+    background-color:#6ac7be;
+    color:white;
+}
+#LowerSplash{
+    padding-top:10px;
+    padding-bottom:10px;
+    background-color:white;
+    color:black;
+}
+
+#SplashBg{
+    height:11px;
+    background-image: url("../img/wave.png");
+    background-repeat: repeat-x;
+}
+#ExtraSplashBg{
+    height:11px;
+    background-image: url("../img/inv_wave.png");
+    background-repeat: repeat-x;
+}
+#ExtraSplash{
+    height:21px;
+    background-image: url("../img/orange_wave.png");
+    background-repeat: repeat;
+}
+
+.my-form-control{
+    padding-left:35px;
+}
+
+i.glyphicon.my-form-control-feedback {
+  position: absolute;
+  /* top: 25px; */
+  /* right: 0; */
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+}
