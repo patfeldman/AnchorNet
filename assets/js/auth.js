@@ -37,23 +37,39 @@
 
             .state('login', {
                 url: '/login', 
+                title: 'Login', 
+                backState:'main',
                 views: {
                     '': {
                         controller: 'LoginController',
                         templateUrl: 'app/components/login/login.view.html', 
                         controllerAs: 'vm'
+                    },
+                    'topMenu@login':{
+                        templateUrl: 'app/components/menus/menu_simple/menu_simple.view.html',
+                        controller:'Menu1Controller', 
+                        controllerAs: 'vm'                        
                     }
+
                 }
             })
 
             .state('register', {
                 url: '/register', 
+                title: 'Create Account', 
+                backState:'main',
                 views: {
                     '': {
                         controller: 'RegisterController',
                         templateUrl: 'app/components/register/register.view.html', 
                         controllerAs: 'vm'
+                    }, 
+                    'topMenu@register':{
+                        templateUrl: 'app/components/menus/menu_simple/menu_simple.view.html',
+                        controller:'Menu1Controller', 
+                        controllerAs: 'vm'                        
                     }
+
                 }
             })
 
@@ -85,13 +101,27 @@
             $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
         }
 
-        $rootScope.$on('$locationChangeStart', function (event, next, current) {
+
+        $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState, fromParams) {
             // redirect to login page if not logged in and trying to access a restricted page
-            var restrictedPage = $.inArray($state.current.name, ['login', 'register', 'main']) === -1;
+            var restrictedPage = $.inArray(toState, ['login', 'register']) === -1;
+            var loginSkipPage = $.inArray(toState, ['main']) === -1;
             var loggedIn = $rootScope.globals.currentUser;
             if (restrictedPage && !loggedIn) {
-                $state.go('login');
+                $state.go('main');
+            } else if(loginSkipPage && loggedIn){
+                $state.go('home');
             }
         });
+
+        // $rootScope.$on('$stateChangeStart', function (event, next, current) {
+        //     // redirect to login page if not logged in and trying to access a restricted page
+        //     var restrictedPage = $.inArray($state.current.name, ['login', 'register', 'main']) === -1;
+        //     var loginSkipPages = $.inArray($state.current.name, ['main']) === -1;
+        //     var loggedIn = $rootScope.globals.currentUser;
+        //     if (restrictedPage && !loggedIn) {
+        //         $state.go('login');
+        //     }
+        // });
     }
 })();

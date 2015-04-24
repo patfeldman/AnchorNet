@@ -4,15 +4,18 @@
     <meta charset="utf-8" />
     <title>AngularJS User Registration and Login Example</title>
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+<!--     <link rel="stylesheet" href="//cdn.jsdelivr.net/flexboxgrid/6.1.1/flexboxgrid.min.css" type="text/css" />
+ -->
+    <link href='http://fonts.googleapis.com/css?family=Exo+2:700,600,800,300,400,500,900' rel='stylesheet' type='text/css'>
     <link href="assets/css/app.css" rel="stylesheet" />
     <link href="assets/css/auth.css" rel="stylesheet" />
 </head>
 <body>
 
-    <div class="container">
-        <div class="col-sm-8 col-sm-offset-2">
+    <div class="container an-allheight">
+        <div class="row an-allheight">
             <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
-            <div ui-view></div>
+            <div ui-view class="an-allheight"></div>
         </div>
     </div>
 
@@ -39,5 +42,6 @@
     <script src="app/components/register/register.controller.js"></script>
     <script src="app/components/tutorial/tutorial.controller.js"></script>
     <script src="app/components/menu_top/menu_top.controller.js"></script>
+    <script src="app/components/menus/menu_simple/menu_simple.controller.js"></script>
 </body>
 </html>

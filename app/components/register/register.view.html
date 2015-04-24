@@ -1,31 +1,43 @@
-﻿<div class="col-md-6 col-md-offset-3">
-    <h2>Register</h2>
+﻿<div class="col-sm-6 col-sm-offset-3 clearfix an-allheight an-page-div">
+    <div ui-view="topMenu"></div>    
     <div ng-show="vm.error" class="alert alert-danger">{{vm.error}}</div>
+    <div class="row clearfix">
+        <div class="col-xs-12 text-center an-img-padding">
+            <img src="assets/img/weirdf.png" >
+        </div>
+    </div>
+
     <form name="form" ng-submit="vm.register()" role="form">
-        <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
-            <label for="username">First name</label>
-            <input type="text" name="firstName" id="firstName" class="form-control" ng-model="vm.user.firstName" required />
-            <span ng-show="form.firstName.$dirty && form.firstName.$error.required" class="help-block">First name is required</span>
-        </div>
-        <div class="form-group" ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required }">
-            <label for="username">Last name</label>
-            <input type="text" name="lastName" id="Text1" class="form-control" ng-model="vm.user.lastName" required />
-            <span ng-show="form.lastName.$dirty && form.lastName.$error.required" class="help-block">Last name is required</span>
-        </div>
-        <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" class="form-control" ng-model="vm.user.username" required />
+        <div class="form-group has-feedback col-sm-8 col-sm-offset-2" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+            <input type="text" name="username" id="username" class="form-control my-form-control" placeholder="username" ng-model="vm.user.username" required />
+            <i class="glyphicon glyphicon-user my-form-control-feedback"></i>
             <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
         </div>
-        <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" class="form-control" ng-model="vm.user.password" required />
+        <div class="form-group has-feedback col-sm-8 col-sm-offset-2" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+            <input type="password" name="password" id="password" class="form-control my-form-control" placeholder="password"  ng-model="vm.user.password" required />
+            <i class="glyphicon glyphicon-lock my-form-control-feedback"></i>
             <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
         </div>
-        <div class="form-actions">
-            <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Register</button>
+        <div class="form-group has-feedback col-sm-8 col-sm-offset-2" ng-class="{ 'has-error': form.password2.$dirty && form.password2.$error.required && form.password2!=form.password}">
+            <input type="password" name="password2" id="password2" class="form-control my-form-control" placeholder="confirm password"  ng-model="vm.user.password2" required />
+            <i class="glyphicon glyphicon-ok my-form-control-feedback"></i>
+            <span ng-show="form.password2.$dirty && form.password2.$error.required && form.password2!=form.password" class="help-block">Password must match</span>
+        </div>
+        <div class="form-group has-feedback col-sm-8 col-sm-offset-2" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
+            <input type="email" name="email" id="email" class="form-control my-form-control" placeholder="school email" ng-model="vm.user.email" required />
+            <i class="glyphicon glyphicon-envelope my-form-control-feedback"></i>
+            <span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">Email is required</span>
+        </div>
+        <div class="form-group has-feedback col-sm-8 col-sm-offset-2" ng-class="{ 'has-error': form.tel.$dirty && form.tel.$error.required }">
+            <input type="tel" name="tel" id="tel" class="form-control my-form-control" placeholder="phone" ng-model="vm.user.
+            tel" required />
+            <i class="glyphicon glyphicon-phone my-form-control-feedback"></i>
+            <span ng-show="form.tel.$dirty && form.tel.$error.required" class="help-block">Phone number is required</span>
+        </div>
+
+        <div class="form-actions text-center">
+            <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-anchor-bold col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">Next</button>
             <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-            <a href="#/login" class="btn btn-link">Cancel</a>
         </div>
     </form>
 </div>

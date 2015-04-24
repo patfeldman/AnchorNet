@@ -1,4 +1,9 @@
-﻿body {
+﻿html,body{
+    height:100%;
+    font-family: 'Exo 2';
+}
+
+body {
     overflow: hidden;
     background-color: #000000;
 }
@@ -132,14 +137,21 @@ NAV
 #UpperSplash{
     background-color:#6ac7be;
     color:white;
+    height:90%;
 }
 #LowerSplash{
+    height:8%;
+    bottom:0;
     padding-top:10px;
     padding-bottom:10px;
     background-color:white;
     color:black;
 }
 
+#Wave{
+    background-color:#6ac7be;
+
+}
 #SplashBg{
     height:11px;
     background-image: url("../img/wave.png");
@@ -149,6 +161,9 @@ NAV
     height:11px;
     background-image: url("../img/inv_wave.png");
     background-repeat: repeat-x;
+    bottom: 0px;
+    position: absolute;
+    width: 100%;
 }
 #ExtraSplash{
     height:21px;
@@ -169,4 +184,43 @@ i.glyphicon.my-form-control-feedback {
   height: 34px;
   line-height: 34px;
   text-align: center;
+}
+
+.btn-anchor-bold{
+    color:#fff;
+    background-color: #f27254;
+}
+
+.top-spacing{
+    padding-top:10px;
+}
+
+.an-allheight{
+    min-height:100%;
+    height:100%;
+
+}
+.an-page-div{
+    background: #fff;
+
+    padding-bottom : 25px;
+}
+.an-vert{
+    float:none;
+    display:inline-block;
+    vertical-align:middle;
+    margin-right:-4px;
+    height:100%;
+    padding-top:15px;
+}
+.an-header-bg{
+    background-color: #6ac7be;
+    color:#fff;
+}
+.an-back{
+    padding-top: 11px;
+
+}
+.an-img-padding{
+    padding:20px 0;
 }
