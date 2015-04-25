@@ -1,0 +1,18 @@
+﻿<div ui-view="topMenu"></div>
+
+<div class="container slider">
+    <img ng-repeat="slide in vm.slides" class="slide slide-animation"
+        ng-hide="!vm.isCurrentSlideIndex($index)" ng-src="{{slide.image}}">
+
+    <a class="arrow prev" href="#/walkthrough" ng-click="vm.nextSlide()"></a>
+    <a class="arrow next" href="#/walkthrough" ng-click="vm.prevSlide()"></a>
+    <nav class="nav">
+        <div class="wrapper">
+            <ul class="dots">
+                <li class="dot" ng-repeat="slide in slides">
+                    <a href="#/walkthrough" ng-class="{'active':vm.isCurrentSlideIndex($index)}"
+                      ng-click="vm.setCurrentSlideIndex($index);">{{slide.description}}</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>

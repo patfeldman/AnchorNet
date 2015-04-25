@@ -1,18 +1,107 @@
-﻿<div ui-view="topMenu"></div>
+<div class="col-sm-6 col-sm-offset-3 clearfix an-allheight an-page-div">
+    <div ui-view="topMenu"></div>    
 
-<div class="container slider">
-    <img ng-repeat="slide in vm.slides" class="slide slide-animation"
-        ng-hide="!vm.isCurrentSlideIndex($index)" ng-src="{{slide.image}}">
-
-    <a class="arrow prev" href="#/walkthrough" ng-click="vm.nextSlide()"></a>
-    <a class="arrow next" href="#/walkthrough" ng-click="vm.prevSlide()"></a>
+    <div class="" ng-switch on="vm.currentIndex">
+        <div class=" " ng-switch-default>
+            <div class="row">
+                <div class = "col-xs-12 text-center ">
+                    <span class="an-btn-fake btn-anchor-bold an-btn-expressive an-xl-margin-top">Welcome!</span>
+                </div>
+            </div>
+            <div class="an-tutorial-text text-center">
+                Welcome to anchorU!
+            </div>
+            <div class="row">
+                <div class = "col-xs-8 col-xs-offset-2 text-center">
+                    <img src="assets/img/swipe.png" class="img-responsive an-img-center">
+                </div>
+            </div>
+            <div class="an-tutorial-text text-center">
+                Swipe through for a quick overview of the app.
+            </div>
+        </div>
+        <div class="" ng-switch-when="1">
+            <div class="row">
+                <div class = "col-xs-12 text-center ">
+                    <span class="an-btn-fake btn-anchor-bold an-btn-expressive an-xl-margin-top an-xl-margin-bottom">Anchor Crew</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class ="col-xs-4 col-xs-offset-2 text-center">
+                    <img src="assets/img/bio1.png" class="img-responsive an-img-center an-image-border">
+                    <span class="an-name-text">anchorgirl</span>
+                </div>
+                <div class ="col-xs-4 text-center">
+                    <img src="assets/img/bio2.png" class="img-responsive an-img-center an-image-border">
+                    <span class="an-name-text">nauticalgal</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class ="col-xs-4 text-center">
+                    <img src="assets/img/bio3.png" class="img-responsive an-img-center an-image-border">
+                    <span class="an-name-text">set_sail24</span>
+                </div>
+                <div class ="col-xs-4 text-center">
+                    <img src="assets/img/bio4.png" class="img-responsive an-img-center an-image-border">
+                    <span class="an-name-text">sail_away</span>
+                </div>
+                <div class ="col-xs-4 text-center">
+                    <img src="assets/img/bio5.png" class="img-responsive an-img-center an-image-border">
+                    <span class="an-name-text">jenny13</span>
+                </div>
+            </div>
+            <div class="an-tutorial-text text-center">
+                <p>
+                    You can also send chats to 
+                    individual crew members by 
+                    tapping their picture.
+                </p>
+            </div>
+        </div>
+        <div class="" ng-switch-when="2">
+            <div class="row">
+                <div class = "col-xs-12 text-center ">
+                    <span class="an-btn-fake btn-anchor-bold an-btn-expressive an-xl-margin-top">&nbsp;&nbsp;&nbsp;Chat&nbsp;&nbsp;&nbsp;</span>
+                </div>
+            </div>
+            <div class="an-tutorial-text text-center">
+                Your crew is here to<br>
+                keep you connected.
+            </div>
+            <div class="row">
+                <div class = "col-xs-8 col-xs-offset-2 text-center">
+                    <img src="assets/img/big_group_chat.png" class="img-responsive an-img-center" id="GroupChatIcon">
+                </div>
+            </div>
+            <div class="an-tutorial-text text-center">
+                Tap the group chat button to check in with each other.
+            </div>
+        </div>
+        <div class="" ng-switch-when="3">
+            <div class="row">
+                <div class = "col-xs-12 text-center ">
+                    <span class="an-btn-fake btn-anchor-bold an-btn-expressive an-xl-margin-top an-xl-margin-bottom">Crew Captain</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class = "col-xs-8 col-xs-offset-2 text-center">
+                    <img src="assets/img/big_captain.png" class="img-responsive an-img-center" id="GroupChatIcon">
+                </div>
+            </div>
+            <div class="an-tutorial-text text-center">
+                Meet your Crew Captain! <br><br>
+                They may send you a message or check in with you every now and then. Tap the avatar at any time to send them an email.
+            </div>
+        </div>
+    </div>
     <nav class="nav">
         <div class="wrapper">
             <ul class="dots">
-                <li class="dot" ng-repeat="slide in slides">
-                    <a href="#/walkthrough" ng-class="{'active':vm.isCurrentSlideIndex($index)}"
-                      ng-click="vm.setCurrentSlideIndex($index);">{{slide.description}}</a></li>
+                <li class="dot" ng-repeat="dot in vm.dots">
+                    <a href="#/walkthrough" ng-class="{'active':vm.isCurrentSlideIndex($index)}" ng-click="vm.setCurrentSlideIndex($index);"></a>
+                </li>
             </ul>
         </div>
     </nav>
+
 </div>

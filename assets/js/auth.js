@@ -26,11 +26,6 @@
                         templateUrl: 'app/components/home/home.view.html',
                         controller:'HomeController', 
                         controllerAs: 'vm'
-                    }, 
-                    'topMenu@home':{
-                        templateUrl: 'app/components/menu_top/menu_top.view.html',
-                        controller:'TopMenuController', 
-                        controllerAs: 'vm'                        
                     }
                 }
             })
@@ -75,6 +70,8 @@
 
             .state('tutorial', {
                 url: '/walkthrough', 
+                title: 'anchor U', 
+                backState:'main',
                 views: {
                     '': {
                         controller: 'TutorialController',
@@ -82,15 +79,15 @@
                         controllerAs: 'vm'
                     }, 
                     'topMenu@tutorial':{
-                        templateUrl: 'app/components/menu_top/menu_top.view.html',
-                        controller:'TopMenuController', 
+                        templateUrl: 'app/components/menus/menu_tutorial/menu_tutorial.view.html',
+                        controller:'MenuTutorialController', 
                         controllerAs: 'vm'                        
                     }
 
                 }
 
             })
-        $urlRouterProvider.otherwise('/main');
+        //$urlRouterProvider.otherwise('/main');
     }
 
     run.$inject = ['$rootScope', '$location', '$cookieStore', '$http', '$state'];
@@ -104,8 +101,8 @@
 
         $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState, fromParams) {
             // redirect to login page if not logged in and trying to access a restricted page
-            var restrictedPage = $.inArray(toState, ['login', 'register']) === -1;
-            var loginSkipPage = $.inArray(toState, ['main']) === -1;
+            var restrictedPage = $.inArray(toState.name, ['login', 'register', 'main']) === -1;
+            var loginSkipPage = $.inArray(toState.name, ['main']) != -1;
             var loggedIn = $rootScope.globals.currentUser;
             if (restrictedPage && !loggedIn) {
                 $state.go('main');
