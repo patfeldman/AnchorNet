@@ -20,7 +20,7 @@
                         AuthenticationService.Login(vm.user.username, vm.user.password, function (response) {
                             if (response.success) {
                                 AuthenticationService.SetCredentials(vm.user.username, vm.user.password);
-                                $state.go('tutorial');
+                                $state.go('selectphoto');
                             }
                         });
                     } else {

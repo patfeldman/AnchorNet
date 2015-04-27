@@ -26,6 +26,11 @@
                         templateUrl: 'app/components/home/home.view.html',
                         controller:'HomeController', 
                         controllerAs: 'vm'
+                    }, 
+                    'topMenu@home':{
+                        templateUrl: 'app/components/menus/menu_tutorial/menu_tutorial.view.html',
+                        controller:'MenuTutorialController', 
+                        controllerAs: 'vm'                        
                     }
                 }
             })
@@ -68,6 +73,25 @@
                 }
             })
 
+            .state('selectphoto', {
+                url: '/selectphoto', 
+                title: 'Select Photo', 
+                backState:'main',
+                views: {
+                    '': {
+                        controller: 'SelectPhotoController',
+                        templateUrl: 'app/components/settings/selectphoto.view.html', 
+                        controllerAs: 'vm'
+                    },
+                    'topMenu@selectphoto':{
+                        templateUrl: 'app/components/menus/menu_simple/menu_simple.view.html',
+                        controller:'Menu1Controller', 
+                        controllerAs: 'vm'                        
+                    }
+
+                }
+            })
+
             .state('tutorial', {
                 url: '/walkthrough', 
                 title: 'anchor U', 
@@ -87,7 +111,7 @@
                 }
 
             })
-        //$urlRouterProvider.otherwise('/main');
+        $urlRouterProvider.otherwise('/main');
     }
 
     run.$inject = ['$rootScope', '$location', '$cookieStore', '$http', '$state'];
@@ -105,9 +129,11 @@
             var loginSkipPage = $.inArray(toState.name, ['main']) != -1;
             var loggedIn = $rootScope.globals.currentUser;
             if (restrictedPage && !loggedIn) {
-                $state.go('main');
+                e.preventDefault();
+                $state.transitionTo('main');
             } else if(loginSkipPage && loggedIn){
-                $state.go('home');
+                e.preventDefault();
+                $state.transitionTo('home');
             }
         });
 

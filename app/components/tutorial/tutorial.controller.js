@@ -5,8 +5,8 @@
         .module('app')
         .controller('TutorialController', TutorialController);
 
-    TutorialController.$inject = ['$rootScope'];
-    function TutorialController($rootScope) {
+    TutorialController.$inject = ['$rootScope', '$state'];
+    function TutorialController($rootScope, $state) {
         var vm = this;
         vm.dots = [0,1,2,3];
         vm.currentIndex = 0;
@@ -20,7 +20,12 @@
             return vm.currentIndex === index;
         };
 
-
+        vm.nextSlide = function(){
+            vm.currentIndex++;
+            if (vm.currentIndex >= vm.dots.length){
+                $state.go('home');
+            }
+        }
     }
 
 })();

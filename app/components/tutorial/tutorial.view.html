@@ -1,8 +1,8 @@
 <div class="col-sm-6 col-sm-offset-3 clearfix an-allheight an-page-div">
     <div ui-view="topMenu"></div>    
 
-    <div class="" ng-switch on="vm.currentIndex">
-        <div class=" " ng-switch-default>
+    <div class="animate-switch-container" ng-switch on="vm.currentIndex" ng-click="vm.nextSlide()">
+        <div class="animate-switch" ng-switch-when="0">
             <div class="row">
                 <div class = "col-xs-12 text-center ">
                     <span class="an-btn-fake btn-anchor-bold an-btn-expressive an-xl-margin-top">Welcome!</span>
@@ -20,7 +20,7 @@
                 Swipe through for a quick overview of the app.
             </div>
         </div>
-        <div class="" ng-switch-when="1">
+        <div class="animate-switch" ng-switch-when="1">
             <div class="row">
                 <div class = "col-xs-12 text-center ">
                     <span class="an-btn-fake btn-anchor-bold an-btn-expressive an-xl-margin-top an-xl-margin-bottom">Anchor Crew</span>
@@ -58,7 +58,7 @@
                 </p>
             </div>
         </div>
-        <div class="" ng-switch-when="2">
+        <div class="animate-switch" ng-switch-when="2">
             <div class="row">
                 <div class = "col-xs-12 text-center ">
                     <span class="an-btn-fake btn-anchor-bold an-btn-expressive an-xl-margin-top">&nbsp;&nbsp;&nbsp;Chat&nbsp;&nbsp;&nbsp;</span>
@@ -77,7 +77,7 @@
                 Tap the group chat button to check in with each other.
             </div>
         </div>
-        <div class="" ng-switch-when="3">
+        <div class="animate-switch" ng-switch-when="3">
             <div class="row">
                 <div class = "col-xs-12 text-center ">
                     <span class="an-btn-fake btn-anchor-bold an-btn-expressive an-xl-margin-top an-xl-margin-bottom">Crew Captain</span>
