@@ -1,0 +1,19 @@
+﻿<div class="col-sm-6 col-sm-offset-3 clearfix an-allheight an-page-div an-gray-bg">
+    <div ui-view="topMenu"></div>    
+	<div id="SectionWrapper">
+		<div class="">
+			<div class="h2">My current mood is : </div>
+			<div class="h3">{{vm.mood}}</div>
+		</div>
+		<div class=''>
+		    <img src='assets/img/big_{{vm.mood}}.png'>
+		</div>
+		<div>
+			<a ui-sref="moodHistory" class="btn btn-default col-xs-3 col-xs-offset-2">History</a>
+			<a ui-sref="moodGroupSelector" class="btn btn-default col-xs-3 col-xs-offset-2">Update</a>
+		</div>
+	</div>
+	<footer id="FooterMenu" class="row">
+	    <div ui-view="bottomMenu" class="an-bottom-menu"></div>    
+	</footer>
+</div>

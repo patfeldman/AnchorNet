@@ -1,0 +1,19 @@
+<div class="col-sm-6 col-sm-offset-3 clearfix an-allheight an-page-div an-gray-bg">
+    <div ui-view="topMenu"></div>    
+	<div id="SectionWrapper">
+		<div class="">
+			<div class="h2">Hey there!</div>
+			<div class="h3">How are you feeling today?</div>
+		</div>
+		<div class="row">
+            <div class="moodGroup col-xs-12" ng-repeat="group in vm.groups">
+				<a ui-sref="moodSelector({moodGroupId:$index})" class="btn btn-default col-xs-4 col-xs-offset-4 an-btn-{{group.GroupName}}">
+					{{group.GroupName}}
+				</a>
+            </div>
+		</div>
+	</div>
+	<footer id="FooterMenu" class="row">
+	    <div ui-view="bottomMenu" class="an-bottom-menu"></div>    
+	</footer>
+</div>

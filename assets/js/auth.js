@@ -18,9 +18,59 @@
                     }
                 }
             })
+            .state('captainChat', {
+                url:'/captainChat',
+                title: 'Captain Chat', 
+                views: {
+                    '': {
+                        templateUrl: 'app/components/home/home.view.html',
+                        controller:'HomeController', 
+                        controllerAs: 'vm'
+                    }, 
+                    'topMenu@captainChat':{
+                        templateUrl: 'app/components/menus/menu_main/menu_main_top.view.html',
+                        controller:'MenuMainTopController', 
+                        controllerAs: 'vm'                        
+                    }
+                }
+            })
+            .state('groupChat', {
+                url:'/groupChat',
+                title: 'Group Chat', 
+                views: {
+                    '': {
+                        templateUrl: 'app/components/home/home.view.html',
+                        controller:'HomeController', 
+                        controllerAs: 'vm'
+                    }, 
+                    'topMenu@groupChat':{
+                        templateUrl: 'app/components/menus/menu_main/menu_main_top.view.html',
+                        controller:'MenuMainTopController', 
+                        controllerAs: 'vm'                        
+                    }
+                }
+            })
+
+            .state('privateChat', {
+                url:'/privateChat',
+                title: 'Private Chat', 
+                views: {
+                    '': {
+                        templateUrl: 'app/components/home/home.view.html',
+                        controller:'HomeController', 
+                        controllerAs: 'vm'
+                    }, 
+                    'topMenu@privateChat':{
+                        templateUrl: 'app/components/menus/menu_main/menu_main_top.view.html',
+                        controller:'MenuMainTopController', 
+                        controllerAs: 'vm'                        
+                    }
+                }
+            })
 
             .state('home', {
                 url:'/home',
+                title: 'anchor U', 
                 views: {
                     '': {
                         templateUrl: 'app/components/home/home.view.html',
@@ -28,12 +78,77 @@
                         controllerAs: 'vm'
                     }, 
                     'topMenu@home':{
-                        templateUrl: 'app/components/menus/menu_tutorial/menu_tutorial.view.html',
-                        controller:'MenuTutorialController', 
+                        templateUrl: 'app/components/menus/menu_main/menu_main_top.view.html',
+                        controller:'MenuMainTopController', 
+                        controllerAs: 'vm'                        
+                    }
+                    , 
+                    'bottomMenu@home':{
+                        templateUrl: 'app/components/menus/menu_main/menu_main_bottom.view.html',
+                        controller:'MenuMainBottomController', 
                         controllerAs: 'vm'                        
                     }
                 }
             })
+
+            .state('mood', {
+                url:'/mood',
+                title: 'Mood', 
+                backState:'',
+                views: {
+                    '': {
+                        templateUrl: 'app/components/mood/mood.view.html',
+                        controller:'MoodController', 
+                        controllerAs: 'vm'
+                    }, 
+                    'topMenu@mood':{
+                        templateUrl: 'app/components/menus/menu_simple/menu_simple.view.html',
+                        controller:'Menu1Controller', 
+                        controllerAs: 'vm'                        
+                    }, 
+                    'bottomMenu@mood':{
+                        templateUrl: 'app/components/menus/menu_main/menu_main_bottom.view.html',
+                        controller:'MenuMainBottomController', 
+                        controllerAs: 'vm'                        
+                    }
+                }
+            })
+            .state('moodGroupSelector', {
+                url:'/moodGroup/',
+                title: 'Mood', 
+                backState:'mood',
+                views: {
+                    '': {
+                        templateUrl: 'app/components/mood/mood_group_selector.view.html',
+                        controller:'MoodGroupSelector', 
+                        controllerAs: 'vm'
+                    }, 
+                    'topMenu@moodGroupSelector':{
+                        templateUrl: 'app/components/menus/menu_simple/menu_simple.view.html',
+                        controller:'Menu1Controller', 
+                        controllerAs: 'vm'                        
+                    }
+                }
+            })
+            .state('moodSelector', {
+                url:'/moodSelector/:moodGroupId',
+                title: 'Select Mood', 
+                backState:'moodGroupSelector',
+                views: {
+                    '': {
+                        templateUrl: 'app/components/mood/mood_selector.view.html',
+                        controller:'MoodSelectorController', 
+                        controllerAs: 'vm'
+                    }, 
+                    'topMenu@moodSelector':{
+                        templateUrl: 'app/components/menus/menu_simple/menu_simple.view.html',
+                        controller:'Menu1Controller', 
+                        controllerAs: 'vm'                        
+                    }
+                }
+            })
+
+
 
             .state('login', {
                 url: '/login', 
