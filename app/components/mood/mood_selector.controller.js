@@ -11,6 +11,7 @@
         vm.mood = Constants.Moods[$stateParams.moodGroupId];
         vm.moodTypes = vm.mood.Moods;
         vm.moodGroupName = vm.mood.GroupName;
+        vm.moodGroupTitle = vm.mood.GroupTitle;
 
         function selectMood(index) {
             MoodService.addMood(index).then(function () {

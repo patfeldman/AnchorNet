@@ -2,16 +2,15 @@
     <div ui-view="topMenu"></div>    
 	<div id="SectionWrapper">
 		<div class="">
-			<div class="h1 {{vm.moodGroupName}}">{{vm.moodGroupName}}</div>
+			<div class="an-mood-big-title an-title-{{vm.moodGroupName}} text-center">{{vm.moodGroupTitle}}</div>
 		</div>
 		<div>
-            <div class="moodGroup col-xs-6" ng-repeat="mood in vm.moodTypes">
+            <div class="an-mood-pic-group col-xs-6" ng-repeat="mood in vm.moodTypes">
 				<a ng-click="selectMood($index);">
-					<div><img src="assets/img/{{mood.Image}}"></div>
-					<div>{{mood.Title}}</div>
+					<div class="text-center"><img src="assets/img/{{mood.Image}}"></div>
+					<div class="text-center an-mood-little-desc an-title-{{vm.moodGroupName}}">{{mood.Title}}</div>
 				</a>
             </div>
-
 		</div>
 	</div>
 	<footer id="FooterMenu" class="row">

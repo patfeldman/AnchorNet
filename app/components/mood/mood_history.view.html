@@ -1,0 +1,16 @@
+<div class="col-sm-6 col-sm-offset-3 clearfix an-allheight an-page-div an-gray-bg">
+    <div ui-view="topMenu"></div>    
+	<div id="SectionWrapper" class="an-scrollable">
+		<div class="row an-history-mood-group" ng-repeat="mood in vm.moodHistory track by $index">
+            <div class="col-xs-3" >
+				<img class="an-img-left-padding" src="assets/img/{{mood.Mood.Image}}">
+            </div>
+            <div class="col-xs-8 col-xs-offset-1 an-vert-parent" >
+            	<div class="an-vert-child">
+					<div class="text-left an-mood-title an-title-{{mood.GroupName}}">{{mood.Mood.Title}}</div>
+					<div class="text-left an-mood-date">{{mood.Time}}</div>
+				</div>
+	        </div>
+		</div>
+	</div>
+</div>

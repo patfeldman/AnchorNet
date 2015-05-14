@@ -148,6 +148,24 @@
                 }
             })
 
+            .state('moodHistory', {
+                url:'/moodHistory',
+                title: 'Mood', 
+                backState:'mood',
+                views: {
+                    '': {
+                        templateUrl: 'app/components/mood/mood_history.view.html',
+                        controller:'MoodHistoryController', 
+                        controllerAs: 'vm'
+                    }, 
+                    'topMenu@moodHistory':{
+                        templateUrl: 'app/components/menus/menu_simple/menu_simple.view.html',
+                        controller:'Menu1Controller', 
+                        controllerAs: 'vm'                        
+                    }
+                }
+            })
+
 
 
             .state('login', {

@@ -1,14 +1,14 @@
 <div class="col-sm-6 col-sm-offset-3 clearfix an-allheight an-page-div an-gray-bg">
     <div ui-view="topMenu"></div>    
 	<div id="SectionWrapper">
-		<div class="">
-			<div class="h2">Hey there!</div>
-			<div class="h3">How are you feeling today?</div>
+		<div class="an-mood-title-group">
+			<div class="an-mood-title">Hey there!</div>
+			<div class="an-mood-desc">How are you feeling today?</div>
 		</div>
 		<div class="row">
             <div class="moodGroup col-xs-12" ng-repeat="group in vm.groups">
-				<a ui-sref="moodSelector({moodGroupId:$index})" class="btn btn-default col-xs-4 col-xs-offset-4 an-btn-{{group.GroupName}}">
-					{{group.GroupName}}
+				<a ui-sref="moodSelector({moodGroupId:$index})" class="btn an-btn-mood col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 an-btn-{{group.GroupName}}">
+					{{group.GroupTitle}}
 				</a>
             </div>
 		</div>

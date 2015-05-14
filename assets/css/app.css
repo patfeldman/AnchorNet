@@ -147,7 +147,7 @@ NAV
 #LowerSplash{
     height:8%;
     bottom:0;
-    padding-top:10px;
+    padding-top:20px;
     padding-bottom:10px;
     background-color:white;
     color:black;
@@ -219,6 +219,13 @@ i.glyphicon.my-form-control-feedback {
     font-weight: 600; 
     font-style:italic;
 
+}
+
+.an-btn-dark{
+  background-color: #999;
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
 }
 
 .top-spacing{
@@ -406,6 +413,7 @@ Lower Menu
     background-color: #f0856e;
     border-top:5px solid #f0856e;
     padding-bottom: 5px;
+    white-space: nowrap;
 }
 #SosMenuItem{
     background-color: #f17154;
@@ -455,8 +463,86 @@ Lower Menu
 /*-------------------
 Moods
 ------------------------*/
+.center-child{
+    text-align: center;
+    display:table-cell;
+}
+.an-mood-title{
+  color: #6ac7be;
+  font-size: 30px;
+  font-weight: 600;
+}
 
+.an-mood-big-title{
+  font-weight: 500;
+  padding:25px 0;
+  font-size: 56px;
 
+}
+
+.an-mood-desc{
+  color: #6ac7be;
+  font-size: 36px;
+  font-weight: 300;
+  padding-bottom:25px;    
+}
+
+.an-mood-little-desc{
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.an-mood-title-group{
+    padding:25px;    
+}
+.an-mood-pic-group{
+    padding-top:30px;
+}
+
+#MoodButtons{
+    margin-top:40px;
+}
+
+.an-btn-mood{
+  background-color: #999;
+  color: white;
+  font-weight: 600;
+  font-size: 30px;
+  margin-top:20px;
+}
+
+.an-btn-YAY{
+    background-color: #777;
+}
+.an-btn-meh{
+    background-color: #999;
+
+}
+.an-btn-BOO{
+    background-color: #bbb;
+}
+
+.an-title-YAY{
+    color : #f17154;
+}
+.an-title-meh{
+    color : #6ac7be;
+}
+.an-title-BOO{
+    color : #888;
+}
+
+.an-history-mood-group{
+    padding-top: 10px;
+    padding-bottom: 15px;
+    border-bottom:#aaaaaa 1px solid;
+    height:127px;
+}
+
+.an-vert-parent{height: 100%; display: table;}
+.an-vert-child{display: table-cell; vertical-align: middle;}
+.an-img-left-padding{padding-left:35px;}
+.an-scrollable{overflow-y:scroll;}
 /*-------------------
 Boot strap extensions
 ------------------------*/

@@ -1,22 +1,17 @@
-﻿(function () {
+(function () {
     'use strict';
 
     angular
         .module('app')
-        .factory('UserService', UserService);
+        .factory('MoodService', MoodService);
 
-    UserService.$inject = ['$timeout', '$filter', '$q'];
-    function UserService($timeout, $filter, $q) {
+    MoodService.$inject = ['$timeout', '$filter', '$q'];
+    function MoodService($timeout, $filter, $q) {
 
         var service = {};
 
         service.GetAll = GetAll;
-        service.GetById = GetById;
-        service.GetByUsername = GetByUsername;
         service.Create = Create;
-        service.Update = Update;
-        service.Delete = Delete;
-
         return service;
 
         function GetAll() {
@@ -25,23 +20,7 @@
             return deferred.promise;
         }
 
-        function GetById(id) {
-            var deferred = $q.defer();
-            var filtered = $filter('filter')(getUsers(), { id: id });
-            var user = filtered.length ? filtered[0] : null;
-            deferred.resolve(user);
-            return deferred.promise;
-        }
-
-        function GetByUsername(username) {
-            var deferred = $q.defer();
-            var filtered = $filter('filter')(getUsers(), { username: username });
-            var user = filtered.length ? filtered[0] : null;
-            deferred.resolve(user);
-            return deferred.promise;
-        }
-
-        function Create(user) {
+        function Create(mood) {
             var deferred = $q.defer();
 
             // simulate api call with $timeout
@@ -104,16 +83,16 @@
 
         // private functions
 
-        function getUsers() {
-            if(!localStorage.users){
-                localStorage.users = JSON.stringify([]);
+        function getMoods() {
+            if(!localStorage.moods){
+                localStorage.moods = JSON.stringify([]);
             }
 
-            return JSON.parse(localStorage.users);
+            return JSON.parse(localStorage.moods);
         }
 
-        function setUsers(users) {
-            localStorage.users = JSON.stringify(users);
+        function setUsers(moods) {
+            localStorage.moods = JSON.stringify(users);
         }
     }
 })();

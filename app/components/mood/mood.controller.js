@@ -9,6 +9,9 @@
     function MoodController($rootScope, $state) {
         var vm = this;
         vm.mood = 'enthusiastic';
+        function changeMood(newMood){
+        		vm.mood = "WOW";
+        }
     }
 
 })();
