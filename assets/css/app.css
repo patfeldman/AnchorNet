@@ -312,9 +312,34 @@ i.glyphicon.my-form-control-feedback {
 HOME
 ---------------------------------------------------------*/
 #SectionWrapper{
-    margin-top:20px;
     background:#fff;
     height:100%;
+}
+#SlideContainer{
+    height:100%;
+    position:relative;
+    z-index: 100;
+}
+.an-slide-left{
+    -ms-transform: translate(-85%,0); /* IE 9 */
+    -webkit-transform: translate(-85%,0); /* Safari */
+    transform: translate(-85%,0);
+
+
+    -webkit-transition: -webkit-transform .2s ease-in-out;
+    -moz-transition: -moz-transform .2s ease-in-out;
+    -ms-transition: -ms-transform .2s ease-in-out;
+    -o-transition: -o-transform .2s ease-in-out;
+    transition: transform .2s ease-in-out;
+}
+.an-no-padding{
+    padding: 0;
+}
+.an-no-margin{
+    margin: 0;
+}
+.an-extra-top-margin{
+    margin-top:20px;
 }
 .an-section-title{
     width:100%;
@@ -386,6 +411,26 @@ HOME
 .an-line-deg300 { transform: rotate(210deg); transform-origin: center left; }
 
 
+/*-----------------------
+Right chat menu
+--------------------------*/
+.an-right-menu {
+    min-height: 100%;
+    width: 85%;
+    right:0;
+    top:0;
+    background: gray;
+    position: absolute;
+    background-color: #EFEFEF;
+    box-shadow: 0 1px 2px #dedede;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.an-no-overflow{
+    overflow:hidden;
+}
+
 
 /*-------------------------
 Lower Menu
@@ -394,6 +439,7 @@ Lower Menu
   bottom: 0;
   position: absolute;
   width: 100%;
+  margin:0;
 }
 #FooterMenu a{
     color:#fff;

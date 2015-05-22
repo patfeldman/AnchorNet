@@ -1,0 +1,6 @@
+﻿<nav ng-show="vm.showMenu" ng-swipe-right="vm.showMenu = false">
+    <ul>
+        <li class="menu_item" ng-repeat='nav in vm.navigation'><a class="menu_link" ng-href="{{nav.href}}">{{nav.title}}</a>
+        </li>
+    </ul>
+</nav>

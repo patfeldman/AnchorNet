@@ -1,29 +1,31 @@
-﻿<div class="col-sm-6 col-sm-offset-3 clearfix an-allheight an-page-div an-gray-bg">
-    <div ui-view="topMenu"></div>    
-
-	<div id="SectionWrapper">
-		<div class="an-section-title">
-			<div class="an-fancy-title">ONBOARD</div>
+﻿<div class="col-sm-6 col-sm-offset-3 clearfix an-allheight an-page-div an-no-overflow an-no-padding">
+	<div id = "SlideContainer" class="an-gray-bg">
+	    <div ui-view="topMenu"></div>    
+		<div id="SectionWrapper" class="an-extra-top-margin">
+			<div class="an-section-title">
+				<div class="an-fancy-title">ONBOARD</div>
+			</div>
+			<div class='an-circle-container'>
+			    <div class="line an-line-deg0"></div>
+			    <div class="line an-line-deg60"></div>
+			    <div class="line an-line-deg120"></div>
+			    <div class="line an-line-deg180"></div>
+			    <div class="line an-line-deg240"></div>
+			    <div class="line an-line-deg300"></div>
+			    <a href='#' id="BigImage" class='an-circle-center'><img src='assets/img/big_group_chat.png'></a>
+			    <a href='#' class='an-image-border an-circle-deg0'><img src='assets/img/bio1.png'></a>
+			    <a href='#' class='an-image-border an-circle-deg60'><img src='assets/img/bio2.png'></a>
+			    <a href='#' class='an-image-border an-circle-deg120'><img src='assets/img/bio3.png'></a>
+			    <a href='#' class='an-image-border an-circle-deg180'><img src='assets/img/bio4.png'></a>
+			    <a href='#' class='an-image-border an-circle-deg240'><img src='assets/img/bio5.png'></a>
+			    <a href='#' class='an-image-border an-circle-deg300'><img src='assets/img/bio3.png'></a>
+			</div>
 		</div>
-		<div class='an-circle-container'>
-		    <div class="line an-line-deg0"></div>
-		    <div class="line an-line-deg60"></div>
-		    <div class="line an-line-deg120"></div>
-		    <div class="line an-line-deg180"></div>
-		    <div class="line an-line-deg240"></div>
-		    <div class="line an-line-deg300"></div>
-		    <a href='#' id="BigImage" class='an-circle-center'><img src='assets/img/big_group_chat.png'></a>
-		    <a href='#' class='an-image-border an-circle-deg0'><img src='assets/img/bio1.png'></a>
-		    <a href='#' class='an-image-border an-circle-deg60'><img src='assets/img/bio2.png'></a>
-		    <a href='#' class='an-image-border an-circle-deg120'><img src='assets/img/bio3.png'></a>
-		    <a href='#' class='an-image-border an-circle-deg180'><img src='assets/img/bio4.png'></a>
-		    <a href='#' class='an-image-border an-circle-deg240'><img src='assets/img/bio5.png'></a>
-		    <a href='#' class='an-image-border an-circle-deg300'><img src='assets/img/bio3.png'></a>
-		</div>
+		<footer id="FooterMenu" class="row">
+		    <div ui-view="bottomMenu" class="an-bottom-menu"></div>    
+		</footer>
 	</div>
-	<footer id="FooterMenu" class="row">
-	    <div ui-view="bottomMenu" class="an-bottom-menu"></div>    
-	</footer>
+    <div ui-view="rightSwipeMenu" class="an-right-menu"></div>    
 </div>
 <!-- <ul>
     <li ng-repeat="user in vm.allUsers">

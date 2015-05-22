@@ -88,6 +88,12 @@
                         controller:'MenuMainBottomController', 
                         controllerAs: 'vm'                        
                     }
+                    , 
+                    'rightSwipeMenu@home':{
+                        templateUrl: 'app/components/menus/menu_right_chat/menu_right_chat.view.html',
+                        controller:'MenuRightChatController', 
+                        controllerAs: 'vm'                        
+                    }
                 }
             })
 
