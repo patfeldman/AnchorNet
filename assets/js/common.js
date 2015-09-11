@@ -1,6 +1,13 @@
 
     var Constants = {};
 
+    Constants.DefaultNumMoods = 15;
+    Constants.Location = {
+        'apiLocation' : 'http://localhost:8083/anchorapi/' // - work
+        //'apiLocation' : 'http://localhost:99/anchorapi/' // - work
+        //'apiLocation' : 'http://localhost:90/anchorapi/' // - HOME
+    };
+
     Constants.Moods = 
     [
         {

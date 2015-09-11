@@ -34,7 +34,7 @@
  
             /* Use this for real authentication
              ----------------------------------------------*/
-            $http.post(Project.Constants.apiLocation + 'api/v1/authenticate', user)
+            $http.post(Constants.Location.apiLocation + 'api/v1/authenticate', user)
                .success(function (response) {
                    callback(response);
                });

@@ -5,14 +5,26 @@
         .module('app')
         .controller('MoodHistoryController', MoodHistoryController);
 
-    MoodHistoryController.$inject = ['$state', '$stateParams'];
-    function MoodHistoryController($state, $stateParams) {
+    MoodHistoryController.$inject = ['$state', '$stateParams', 'UserService', 'FlashService'];
+    function MoodHistoryController($state, $stateParams, UserService, FlashService) {
         var vm = this;
 
 
         vm.moodHistory = GetMoodHistory();
 
         function GetMoodHistory() {
+
+            UserService.GetMyLastMoods(Constants.DefaultNumMoods)
+                .then(function (response) {
+                    if (response.success) {
+                        var i = 1;
+
+                    } else {
+                        FlashService.Error(response.message);
+                        vm.dataLoading = false;
+                    }
+                });
+
             // test info
             var retData = [];
             var storedData = [

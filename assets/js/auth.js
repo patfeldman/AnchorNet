@@ -6,8 +6,11 @@
             .run(run);
 
 
-    config.$inject = ['$stateProvider', '$urlRouterProvider'];
-    function config($stateProvider, $urlRouterProvider){
+    config.$inject = ['$stateProvider', '$urlRouterProvider', '$httpProvider'];
+    function config($stateProvider, $urlRouterProvider, $httpProvider){
+        $httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common["X-Requested-With"];
+        delete $httpProvider.defaults.headers.common["authorization"];
 
         $stateProvider
             .state('main', {

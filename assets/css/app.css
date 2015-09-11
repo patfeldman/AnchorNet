@@ -558,16 +558,21 @@ Moods
 }
 
 .an-btn-YAY{
-    background-color: #777;
+    background-color: #f17154;
 }
 .an-btn-meh{
-    background-color: #999;
+    background-color: #6ac7be;
 
 }
 .an-btn-BOO{
-    background-color: #bbb;
+    background-color: #888;
 }
-
+.an-btn-BOO:hover{
+        color:#3a3a3a;
+}
+.an-btn-YAY:hover, .an-btn-meh:hover{
+        color:#5a5a5a;
+}
 .an-title-YAY{
     color : #f17154;
 }
