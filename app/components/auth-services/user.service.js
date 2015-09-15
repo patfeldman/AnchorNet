@@ -8,10 +8,13 @@
     UserService.$inject = ['$http', '$rootScope'];
     function UserService($http, $rootScope) {
         var service = {};
+        var moodStorage = {};
+        moodStorage.doMoodUpdate = true;
 
         service.GetAll = GetAll;
         service.GetMyLastMoods = GetMyLastMoods;
         service.GetByUsername = GetByUsername;
+        service.AddMood = AddMood;
         service.Create = Create;
         service.Update = Update;
         service.Delete = Delete;
@@ -23,7 +26,17 @@
         }
 
         function GetMyLastMoods(numMoods) {
-            return $http.get(Constants.Location.apiLocation + 'api/v1/moods/history/token/' + $rootScope.globals.currentUser.authtoken + '/amount/' + numMoods).then(handleSuccess, handleError('Error getting user by id'));
+            if (moodStorage.doMoodUpdate){
+                moodStorage.doMoodUpdate = false;
+                moodStorage.history = $http.get(Constants.Location.apiLocation + 'api/v1/moods/history/token/' + $rootScope.globals.currentUser.authtoken + '/amount/' + numMoods).then(handleSuccess, handleError('Error getting user by id'));
+            }
+            return moodStorage.history;
+        }
+
+        function AddMood(groupId, moodId) {
+            moodStorage.doMoodUpdate = true;
+            var jsonString = {"groupId":groupId, "moodId":moodId};
+            return $http.post(Constants.Location.apiLocation + 'api/v1/moods/add/token/' + $rootScope.globals.currentUser.authtoken, jsonString).then(handleSuccess, handleError('Error creating user'));
         }
 
         function GetByUsername(username) {

@@ -7,6 +7,9 @@ body {
     overflow: hidden;
     background-color: #000000;
 }
+@-ms-viewport{
+  width: device-width;
+}
 
 .slider {
     width: 800px;
@@ -613,6 +616,27 @@ Boot strap extensions
     float: left;
 }
 
+img.bigImage{
+    width:160px;
+}
+
+@media (max-width: 500px) {
+    .an-img-left-padding {
+        padding-left: 10px;
+    }
+
+    .an-mood-title {
+        color: #6ac7be;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    img.bigImage{
+        width:100px;
+    }
+    .an-mood-title-group {
+        padding: 0px; */
+    }
+}
 @media (min-width: 768px) {
     .col-sm-5ths {
         width: 20%;

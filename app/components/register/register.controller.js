@@ -15,12 +15,15 @@
             vm.dataLoading = true;
             UserService.Create(vm.user)
                 .then(function (response) {
-                    if (response.success) {
+                    if (response.data.success) {
                         FlashService.Success('Registration successful', true);
-                        AuthenticationService.Login(vm.user.username, vm.user.password, function (response) {
+                        AuthenticationService.Login(vm.user, function (response) {
                             if (response.success) {
-                                AuthenticationService.SetCredentials(vm.user.username, vm.user.password);
+                                AuthenticationService.SetCredentials(vm.user.username, vm.user.password, response.authToken);
                                 $state.go('selectphoto');
+                            } else {
+                                FlashService.Error(response.message);
+                                vm.dataLoading = false;
                             }
                         });
                     } else {

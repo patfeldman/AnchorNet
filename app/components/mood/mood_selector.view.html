@@ -6,7 +6,7 @@
 		</div>
 		<div>
             <div class="an-mood-pic-group col-xs-6" ng-repeat="mood in vm.moodTypes">
-				<a ng-click="selectMood($index);">
+				<a ng-click="moodSelect({{vm.moodGroupId}}, {{mood.MoodId}})">
 					<div class="text-center"><img src="assets/img/{{mood.Image}}"></div>
 					<div class="text-center an-mood-little-desc an-title-{{vm.moodGroupName}}">{{mood.Title}}</div>
 				</a>

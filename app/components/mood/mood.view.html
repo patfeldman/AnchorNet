@@ -3,10 +3,10 @@
 	<div id="SectionWrapper">
 		<div class="col-xs-12 an-mood-title-group">
 			<div class="an-mood-title">My current mood is: </div>
-			<div class="an-mood-desc">{{vm.mood}}</div>
+			<div class="an-mood-desc">{{vm.mood_lcase}}</div>
 		</div>
 		<div class='col-xs-12 center-child'>
-		    <img class='' src='assets/img/big_{{vm.mood}}.png'>
+		    <img class='bigImage' src='assets/img/{{vm.mood_lcase}}.png'>
 		</div>
 		<div id="MoodButtons" class="col-xs-12">
 			<a ui-sref="moodHistory" class="btn an-btn-dark col-xs-4 col-xs-offset-1">History</a>
